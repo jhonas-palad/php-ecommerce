@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+
+    height: calc(3em - 100%);
+
+}
+
+header{
+
+    justify-content: space-between;
+    display: static;
+    top: 0;
+    padding: 1em;
+    height: 3em;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+section{
+    
+}
+
+.flex-row,
+.flex-col{
+    display: flex;
+    align-items: center;
+}
+
+.flex-col{
+    flex-direction: column;
+    align-items: center;
+
+}

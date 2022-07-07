@@ -1,0 +1,8 @@
+.logo{
+    height:40px;
+    width: 150px;
+}
+
+.nav__btns, .nav__links{
+    gap:1em;
+}
