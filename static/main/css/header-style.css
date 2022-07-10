@@ -1,8 +1,53 @@
 .logo{
-    height:40px;
-    width: 150px;
+    height:55px;
+    width:55px;
+    margin-right: 1em;
 }
 
+#header__nav-link{
+    margin-right: auto;
+}
 .nav__btns, .nav__links{
-    gap:1em;
+    gap:10px;
+}
+.link, .btn{
+    position: relative;
+
+}
+
+input[name=search]{
+    padding:0.5rem 1rem;
+    border-radius: 50px;
+    border:none;
+    background-color:#aaaaaa;
+    color: #eeeeee;
+    outline:none;
+    transition: background-color 0.5s ease;
+}
+
+input[name=search]:focus{
+    background-color: #ffffff;
+    border:1px solid  #333333;
+    color:#333333;
+}
+
+label[for=search-input]{
+    position:absolute;
+    right: 0;
+    width:20%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+}
+
+
+.scroll-down {
+    transform: translate3d(0, -100%, 0);
+}
+.scroll-up{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    
 }

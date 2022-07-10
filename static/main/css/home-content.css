@@ -1,0 +1,282 @@
+.container{
+    width: 100%;
+    position:relative;
+    justify-content:center;
+    padding: 4em 0;
+    min-height: 800px ;
+    margin-bottom: 1em;
+   
+}
+
+small{
+    font-weight: bold;
+}
+.container-item{
+    /* justify-content; */
+    gap: 1em;
+
+    align-self: stretch;
+
+}
+
+.container__text{
+    gap: 1em;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.link-btn{
+    color: var(--x-light-grey);
+    font-size: medium;
+    padding: 0.9em 2em;
+    box-shadow: var(--bxsd1);
+    background-color: #6b00c4;
+    border: none;
+    border-radius: 10px;
+
+}
+
+section:nth-of-type(2){
+    gap: 2em;
+
+}
+
+section:nth-of-type(2) .container__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+section:nth-of-type(2) .container-item.flex-col{
+    gap: 2em;
+}
+.container__img{
+    top:0;
+}
+
+
+.container-item.g-2x2{
+    display:grid;
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 350px 350px;
+    gap: 1.5em;
+
+
+}
+.card__title{
+    font-size: 3rem;
+}
+
+
+.container-item__card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--x-light-grey);
+    border-radius: 8px;
+    gap:1em;
+    padding: 1em 0 1em 1em;
+    
+}
+
+.card-products__card, .container-item__card,
+.link-btn{
+    transition: box-shadow 300ms ease, transform 200ms ease;
+}
+
+.card-products__card:hover, 
+.link-btn:hover, 
+.container-item__card:hover{
+    box-shadow: var(--bxsd2);
+    transform:scale(1.02);
+
+}
+.card__content{
+    display:flex;
+    flex-grow:1;
+}
+
+.content__description{
+    width:60%;
+    align-items: flex-start;
+    justify-content:space-between;
+}
+.container-item__side-bg{
+    width: 40%;
+    height: 100%;
+    
+    background-size: 250px 250px;
+    background-repeat: no-repeat;
+}
+
+.container-item__card:nth-child(1) .container-item__side-bg{
+    background-image: url(../img/card-pc1.avif);
+}
+.container-item__card:nth-child(2) .container-item__side-bg{
+    background-image: url(../img/card-pc2.avif);
+}
+.container-item__card:nth-child(3) .container-item__side-bg{
+    background-image: url(../img/card-pc3.avif);
+}
+.container-item__card:nth-child(4) .container-item__side-bg{
+    background-image: url(../img/card-pc4.avif);
+}
+
+.description__title, .description__bottom{
+    font-weight: normal;
+}
+
+section:nth-of-type(3){
+    background: var(--section-banner-slider-light);
+    
+    transition:background 0.3s ease-in;
+}
+
+/*
+section:nth-of-type(3)::before, 
+section:nth-of-type(3)::after
+{
+    font-family: 'FontAwesome';
+    font-size: 4rem;
+    position: absolute;
+    top:50%;
+    z-index: 2;
+    color:var(--grey);
+    cursor:pointer;
+}
+
+ section:nth-of-type(3)::before{
+    
+    content: "\f0d9";
+    left:3%;
+    transform:translateY(-50%);
+}
+section:nth-of-type(3)::after{
+    content:"\f0da";
+    right:3%;
+    transform:translateY(-50%);
+}
+*/
+section:nth-of-type(3) img{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    opacity:0;
+    transition: opacity 0.5s ease-in;
+    z-index: 2;
+} 
+section:nth-of-type(3) img.show{
+    opacity:1;
+
+}
+
+
+section:nth-of-type(3) span{
+    position: absolute;
+    top:50%;
+    color:var(--grey);
+    cursor:pointer;
+    
+    z-index: 5;
+    transform:translateY(-50%);
+
+}
+
+section:nth-of-type(3) span:hover i{
+    transform: scale(1.2);
+}
+
+section:nth-of-type(3) span i{
+    font-size: 3rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+section:nth-of-type(3) .left-arrow{
+    left: 3%;
+}
+section:nth-of-type(3) .right-arrow{
+    right: 3%;
+}
+
+
+.container__color-btns{
+    position:absolute;
+    bottom:3%;
+    left:50%;
+    transform: translateX(-50%);
+    gap: 1em;
+    
+}
+.container__color-btns i:nth-of-type(1){
+    color: var(--svpurple2);
+    
+}
+.container__color-btns i:nth-of-type(2){
+    color: #ffffff;
+}
+.container__color-btns i:nth-of-type(3){
+    color: var(--grey);
+}
+
+section:nth-of-type(4) .container__card-products {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:2em;
+    padding:2em;
+
+}
+
+section:nth-of-type(4) a{
+    background-color: var(--x-light-grey);
+    border-radius: 8px;
+    position: relative;
+}
+section:nth-of-type(4) a .fa-cart-plus{
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    color: black;
+}
+
+section:nth-of-type(4) a img{
+    height: 280px;
+    width: 280px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container-item:nth-child(2){
+    background-image: url(../img/violet-gaming-pc.webp);
+    background-size: contains;
+} */
+
+
+/* .container-item.show{
+    opacity: 1;
+} */

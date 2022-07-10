@@ -1,0 +1,13 @@
+DirectoryIndex main/index.php
+
+RewriteEngine on
+
+RewriteBase /php-ecommerce
+
+#RewriteCond %{REQUEST_FILENAME} !-f [OR]
+#RewriteCond %{REQUEST_FILENAME} -f [OR]
+#RewriteCond %{REQUEST_FILENAME} !-d [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+
+# Push every request to index.php
+#RewriteRule ^(.*)$ public_html/index.php [QSA]

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-155.696 100 609.404 280.189" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="58.734" y1="255.947" x2="58.734" y2="288.795" id="gradient-0" gradientTransform="matrix(0.000505, -0.974569, 2.750525, 0.001355, -691.34467, 327.515803)">
+      <stop offset="0" style="stop-color: rgb(34, 80, 160);"/>
+      <stop offset="1" style="stop-color: rgb(194, 27, 27);"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(4.186203, 0, 0, 2.855469, -779.630127, -480.441895)" style="">
+    <g transform="matrix(1, 0, 0, 1, 0, 1.615874)">
+      <path style="stroke-opacity: 0; stroke: rgb(255, 255, 255); paint-order: fill;" d="M 234.623 210.291 H 271.563 A 19.031 19.031 0 0 1 290.594 229.322 V 229.322 A 19.031 19.031 0 0 1 271.563 248.353 H 234.623 V 210.291 Z" bx:shape="rect 234.623 210.291 55.971 38.062 0 19.031 19.031 0 1@c39b4051"/>
+      <path style="stroke-opacity: 0; stroke: rgb(255, 255, 255);" d="M 234.623 248.225 H 263.294 A 27.3 19.031 0 0 1 290.594 267.256 V 267.256 A 27.3 19.031 0 0 1 263.294 286.287 H 234.623 V 248.225 Z" bx:shape="rect 234.623 248.225 55.971 38.062 0 27.3 27.3 0 1@95e347c7"/>
+      <path style="stroke-opacity: 0; stroke: rgba(255, 255, 255, 0); fill: rgb(255, 255, 255);" d="M 234.014 240.63 H 263.533 A 7.135 7.135 0 0 1 270.668 247.765 V 249.805 A 7.135 7.135 0 0 1 263.533 256.94 H 234.014 V 240.63 Z" bx:shape="rect 234.014 240.63 36.654 16.31 0 7.135 7.135 0 1@ad3fbe92"/>
+    </g>
+  </g>
+  <text style="fill: url(#gradient-0); font-family: Arial, sans-serif; font-size: 24.2px; letter-spacing: 2.4px; text-anchor: middle; white-space: pre;" transform="matrix(1.832277, 0, 0, 1.880091, -95.971947, -280.858826)"><tspan x="58.734" y="277.804">ByteMe</tspan><tspan x="58.734" dy="0.4em">​</tspan><tspan style="font-size: 6.38267px;">every byte counts</tspan></text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 24.2px;" x="-95.278" y="109.948"> </text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 26.1px;" x="588.878" y="314.931"> </text>
+</svg>

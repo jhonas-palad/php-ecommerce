@@ -1,35 +1,97 @@
+:root{
+    /* colors*/
+    --x-light-grey: #f0f1fa;
+    --light-grey: #999999;
+    --grey: #4c4c4c;
+    --dark-grey: #333333;
+    --black: #000000;
+
+    /*box shadow*/
+    --bxsd1: 0 4px 8px rgb(0 0 0 / 20%);
+    --bxsd2: 0 5px 10px rgba(0, 0, 0, 0.301);
+
+    --svpurple1:#7322c1;
+    --svpurple2: #8f4ecd;
+    --svpurple3: #ab7ada;
+    --svpurple4: #c7a7e6;
+    --svpurple5: #e3d3f3;
+
+    --section-banner-slider-purple:  linear-gradient(90deg, rgba(193,168,240,1) 0%, rgba(172,93,255,1) 45%, rgba(112,9,168,1) 100%);
+    --section-banner-slider-light: radial-gradient(circle, rgba(161,163,172,1) 0%, rgba(255,255,255,1) 100%);
+    --section-banner-slider-dark: linear-gradient(90deg, rgba(170,170,170,1) 0%, rgba(129,129,129,1) 50%, rgba(94,94,94,1) 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+}
+html{
+    font-size:10px;
 }
 
 body{
-
-    height: calc(3em - 100%);
-
+    background-color: #ffffff ;
 }
 
 header{
-
-    justify-content: space-between;
-    display: static;
+    
+    background-color:#ffffff;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    padding: 1em;
-    height: 3em;
+    margin:auto;
+    padding: 20px 5vw;
+    z-index: 99;
+    
+
+    transition: all 300ms ease-in-out;
+
 }
 
 a{
     text-decoration: none;
+    font-weight: 600;
 }
 
 li{
     list-style: none;
 }
 
-section{
-    
+/* img,audio, canvas, iframe,
+svg, video{
+
+} */
+
+img{
+    height: auto;
+    max-width: 100%;
+    vertical-align:middle
+}
+
+h1{
+    font-size: 10rem;
+}
+
+h2{
+    font-size: 7rem;
+}
+
+.sm{
+    font-size: 1rem;
+}
+
+.md{
+    font-size: 2rem;
+}
+.lg1{
+    font-size: 4rem;
+}
+.lg2{
+    font-size: 5rem;
 }
 
 .flex-row,
@@ -40,6 +102,18 @@ section{
 
 .flex-col{
     flex-direction: column;
-    align-items: center;
+}
 
+.justify-center{
+    justify-content:center;
+}
+.justify-start{
+    justify-content:flex-start;
+}
+.justify-end{
+    justify-content:flex-end;
+}
+
+.align-start{
+    align-items: flex-start;
 }

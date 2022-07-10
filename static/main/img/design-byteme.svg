@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <g transform="matrix(4.520164, 0, 0, 3.550633, -803.612793, -616.618408)" style="">
+    <g transform="matrix(1, 0, 0, 1, 0, 1.615874)">
+      <path style="stroke-opacity: 0; stroke: rgb(255, 255, 255); fill: rgb(24, 24, 24);" d="M 225.991 209.704 H 254.662 A 27.3 19.031 0 0 1 281.962 228.735 V 228.735 A 27.3 19.031 0 0 1 254.662 247.766 H 225.991 V 209.704 Z" bx:shape="rect 225.991 209.704 55.971 38.062 0 27.3 27.3 0 1@61537ede"/>
+      <path style="stroke-opacity: 0; stroke: rgb(255, 255, 255); fill: rgb(24, 24, 24);" d="M 225.991 247.638 H 254.662 A 27.3 19.031 0 0 1 281.962 266.669 V 266.669 A 27.3 19.031 0 0 1 254.662 285.7 H 225.991 V 247.638 Z" bx:shape="rect 225.991 247.638 55.971 38.062 0 27.3 27.3 0 1@9e6b3e02"/>
+      <path style="stroke-opacity: 0; stroke: rgb(255, 255, 255); fill: rgb(255, 255, 255);" d="M 225.938 245.709 H 260.036 A 2 2 0 0 1 262.036 247.709 V 248.215 A 2 2 0 0 1 260.036 250.215 H 225.938 V 245.709 Z" bx:shape="rect 225.938 245.709 36.098 4.506 0 2 2 0 1@29ee5a14"/>
+    </g>
+  </g>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 24.2px; letter-spacing: 2.4px; text-anchor: middle; white-space: pre;" transform="matrix(1.832277, 0, 0, 1.880091, 3.090841, -242.513672)"><tspan x="58.734" y="277.804">ByteMe</tspan><tspan x="58.734" dy="0.4em">​</tspan><tspan style="font-size: 6.38267px;">every byte counts</tspan></text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 24.2px;" x="-95.278" y="109.948"> </text>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 26.1px;" x="588.878" y="314.931"> </text>
+</svg>
