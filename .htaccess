@@ -2,7 +2,7 @@ DirectoryIndex main/index.php
 
 RewriteEngine on
 
-RewriteBase /php-ecommerce
+RewriteBase /php-ecommerce/
 
 #RewriteCond %{REQUEST_FILENAME} !-f [OR]
 #RewriteCond %{REQUEST_FILENAME} -f [OR]
