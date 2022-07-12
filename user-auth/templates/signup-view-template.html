@@ -1,0 +1,59 @@
+{%extends "auth-base.html"%}
+
+{%block content%}
+
+<div class="container">
+    <form action="{{url}}" method="POST" signup>
+        <a class="logo" href="/php-ecommerce/">
+            <img src="/php-ecommerce/static/main/img/logos/nzxt-1-black.svg">
+        </a>
+        <div class="line"></div>
+
+        <div class="input-group valid">
+            <label for="username-id">Username</label>
+            <input id="username-id" name="username" type="text" placeholder="Enter your username">
+        </div>
+        <div class="input-group">
+            <label for="email-id">Email</label>
+            <input id="email-id" name="email" type="text" placeholder="Enter your email" >
+        </div>
+
+        <div class="input-group">
+            <label for="password-id">Password</label>
+            <input id="password-id" name="password" type="password" placeholder="Password">
+        </div>
+        <div class="input-group">
+            <label for="c-password-id">Password</label>
+            <input id="c-password-id" name="c-password" type="password" placeholder="Confirm Password">
+        </div>
+        
+        <div class="input-group">
+            <input id="remember-me-id" name="remember-me" type="checkbox">
+            <label for="remember-me-id">
+                I accept the NZXT's Terms of Use and have read the Privacy Policy
+            </label>
+        </div>
+
+    
+        
+        <input class="link-btn" type="button" value="Sign Up">
+
+        <div class="form__link-bottom">
+            <span>Already have an account? <a href="{{url_sign_up}}">Sign in here</a></span>
+        </div>
+        
+
+    </form>
+
+
+
+</div>
+{%endblock%}
+
+{%block scripts%}
+<script>
+
+    var inputs = Array.from(document.querySelectorAll('.input-group'));
+    // to be continued
+</script>
+{%endblock%}

@@ -79,21 +79,48 @@
     <div class="container__card-products">
         {%for product in products%}
         <a href="#" class="card-products__card">
-            <i class="fa-solid fa-cart-plus"></i>
-            <img src="{{product.src}}" alt="">
-            <h3>{{product.name}}</h3>
-            <div class="card__bottom">
-                <span>{{product.price}}</span>
-                {%for color in product.colors%}
-                <i class="fa-solid fa-circle" style="color:{{color}}"></i>
-                {%endfor%}
+            <button class="card__add-cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="card__img-bg">
+                <img src="{{product.src}}" alt="">
             </div>
+           
+            <div class="card__bottom flex-col">
+                <h3>{{product.name}}</h3>
+                <div class="bottom__line"></div>
+                <div class="bottom__end flex-row">
+                    <span class="md1">{{product.price}}</span>
+                    <div class="end__colors">
+                        {%for color in product.colors%}
+                            <i class="fa-solid fa-circle" style="color:{{color}}"></i>
+                        {%endfor%}
+                    </div>
+                   
+                </div>
+            </div>
+            
         
         </a>    
         {%endfor%}
     </div>
 </section>
     
+<section class="container">
+    <div class="container__head">
+        <h3>Starter Series</h3>
+        <p>Prebuilt PCs to Start any Gamin Journey</p>
+        <a>
+            <span>Learn More</span>
+             <i class="fa-solid fa-angle-right"></i>
+        </a>
+    </div>
+    <div class="container__body-img">
+        <img src="">
+    </div>
+</section>
+
+
 {%endblock%}
 
 

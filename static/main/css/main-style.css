@@ -34,8 +34,27 @@ html{
 }
 
 body{
+    animation: show-up ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
     background-color: #ffffff ;
+
 }
+
+@keyframes show-up{
+    0%{
+        opacity:0;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 
 header{
     
@@ -83,7 +102,9 @@ h2{
 .sm{
     font-size: 1rem;
 }
-
+.md1{
+    font-size: 1.5rem;
+}
 .md{
     font-size: 2rem;
 }
@@ -116,4 +137,17 @@ h2{
 
 .align-start{
     align-items: flex-start;
+}
+
+.card__add-cart-btn, .container-item__card,
+.link-btn{
+    transition: box-shadow 300ms ease, transform 200ms ease;
+}
+
+.card__add-cart-btn:hover, 
+.link-btn:hover, 
+.container-item__card:hover{
+    box-shadow: var(--bxsd2);
+    transform:scale(1.02);
+
 }

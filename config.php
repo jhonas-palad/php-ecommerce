@@ -10,7 +10,7 @@
     $MYSQL_CREDENTIALS = array(
         'HOST' => '127.0.0.1',
         'PORT' => '3306',
-        'DB' => 'nzxt_ecommerce_db',
+        'DB' => '',
         'USERNAME' => 'root',
         'PASSWORD' => '',
         'SOCKET' => '',
