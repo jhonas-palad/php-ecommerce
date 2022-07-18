@@ -1,0 +1,112 @@
+{%extends 'modal.html'%}
+
+{%block content%}
+    <div class="modal__content flex-col align-start">
+        <div class="content__head">
+            <h3>Add New Product</h3>
+        </div>
+        <div class="content__body">
+            <form id="form-add-product" method="POST" enctype="multipart/form-data">
+                <div class="form__inputs">
+                    <div class="input-group">
+                        <label for="product-name">Name</label>
+                        <input id="product-name" type="text" name="product-name" placeholder="Name of the product">
+                    </div>
+                    <div class="input-group">
+                        <label for="product-price">Price</label>
+                        <input id="product-price" type="number" name="product-price" min="0.00" step="0.01" placeholder="Price of the product">
+                    </div>
+                    <div class="inputs__wrapper flex-row">
+                        <div class="input-group">
+                            <label for="product-qty">Qty</label>
+                            <input id="product-qty" type="number" name="product-qty" min="0" step="1" placeholder="Quantity of the product">
+                        </div>
+                        <div class="input-group">
+                            <label for="product-category">Category</label>
+                            <select name="product-category" id="product-category" onchange="category_change(this)">
+                                <option value="0" selected>Select a category</option>
+                                {%for category in category_queryset%}
+                                <option value="{{category.category_id}}">{{category.category_name|title}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                    </div>
+                    
+
+
+                    <div class="input-group">
+                        <label for="product-series">Series</label>
+                        <select name="product-series" id="product-series">
+                            <option value="NA" selected>Choose a series</option>
+                            {%for series in series_queryset%}
+                            <option value="{{series.series_id}}">{{series.series_name|title}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="product-color">Color</label>
+                        <select name="product-color" id="product-color">
+                            {%for colorway in colorway_queryset%}
+                            <option value="{{colorway.colorway_name}}">{{colorway.colorway_name|title}}</option>
+                            {%endfor%}
+                        </select>
+                    </div>
+    
+                </div>
+                <div class="form__uploads flex-col">
+                    <div class="uploads__file-upload flex-col">
+                        <input id="product-upload" name="product-upload" type="file" class="file-upload__input" accept="image/*" multiple>
+                        <label for="product-upload">
+                            <i class="fa-solid fa-images"></i>
+                        </label>
+                        
+                        <h3 class="file-upload__h3">Drag & drop<br>or <span style="color:#0b1da9">browse</span>
+                        </h3>
+                    
+                        <small class="file-upload__small" type="button">Supports: JPEG, JPG, PNG, SVG</small>
+
+                    </div>
+                    <div class="uploads__list-uploaded">
+                        <ul class="flex-col align-start">
+                            {%for file in uploaded_files%}
+                                
+                                <li class="uploaded__ul-li image">
+                                    <div class="ul-li__thumbnail">
+                                        <i class="fa-solid fa-file-image"></i>
+                                        <span class="completed"><i class="fa-solid fa-circle-check"></i></span>
+                                    </div>
+                                    <div class="ul-li__properties">
+                                        <span class="properties__name">
+                                            starter-pc-series-pro-1.svg
+                                        </span>
+
+                                        <span class="properties__size">
+                                            29300kb
+                                        </span>
+                                        <span class="progress">
+                                            <span class="progress__buffer">
+                                                <div class="buffer__color"></div>
+                                            </span>
+                                            <span class="progress__percentage">100%</span>
+                                        </span>
+                                    </div>
+                                    <button id="{{file.pk}}" for="{{uploaded_requirement.filename}}" type="button" class="ul-li__remove-btn" uploaded>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </form>
+        </div>
+        <div class="content__foot flex-row">
+            
+            <button onclick="modal_cancel()">Cancel</button>
+            <button onclick="modal_done('add')">Done</button>
+        </div>
+    </div>
+    
+{%endblock%}

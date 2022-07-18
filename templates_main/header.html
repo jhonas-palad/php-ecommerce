@@ -14,20 +14,21 @@
 
     <nav id="header__nav-btn" class="flex-row">
         <ul class="nav__btns flex-row">
-            <li class="btn flex-row">
+            <li class="flex-row">
                 <input id="search-input" type="text" name="search" placeholder="Search a product" >
-                <label for="search-input"><i class="fa-solid fa-magnifying-glass"></i></label>
+                <label for="search-input">
+                    {%include 'regular-search.svg'%}
+                </label>
             </li>
 
             <li class="btn">
                 <a href="/php-ecommerce/user-auth/signin-view.php/">Sign in</a>
-                <i class="fa-solid fa-user"></i>
-                
+                {%include 'solid-user.svg'%}
             </li>
 
             <li class="btn">
                 <a href="#">My Cart</a>
-                <i class="fa-solid fa-cart-shopping"></i>
+                {%include 'regular-cart.svg'%}
                 
             </li>
             

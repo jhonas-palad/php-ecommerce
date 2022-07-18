@@ -5,6 +5,7 @@
     --grey: #4c4c4c;
     --dark-grey: #333333;
     --black: #000000;
+    --info-color:#347aeb;
 
     /*box shadow*/
     --bxsd1: 0 4px 8px rgb(0 0 0 / 20%);
@@ -34,7 +35,7 @@ html{
 }
 
 body{
-    animation: show-up ease 0.5s;
+    animation: show-up ease-in 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     
@@ -74,6 +75,7 @@ header{
 a{
     text-decoration: none;
     font-weight: 600;
+    
 }
 
 li{
@@ -139,7 +141,8 @@ h2{
     align-items: flex-start;
 }
 
-.card__add-cart-btn, .container-item__card,
+.card__add-cart-btn, 
+.container-item__card,
 .link-btn{
     transition: box-shadow 300ms ease, transform 200ms ease;
 }
@@ -150,4 +153,52 @@ h2{
     box-shadow: var(--bxsd2);
     transform:scale(1.02);
 
+}
+
+.input-group{
+    position:relative;
+    align-items: flex-start;
+    flex-direction: column;
+    padding:5px;
+    align-self: stretch;
+    gap:0.5em;
+    justify-content:center;
+    flex-grow: 1;
+}
+
+.input-group.row{
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.input-group input, select{
+    position:relative;
+    padding:0.8em;
+    min-width: 100%;
+    outline:none;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--x-light-grey);
+    border:1px solid transparent;
+    transition: border 0.4s ease;
+}
+input[type=checkbox]{
+    min-width:0%;
+}
+select{
+    cursor: pointer;
+}
+
+
+.input-group input[type=text]:focus, .input-group input[type=password]:focus{
+    border-color: #03a9fc; 
+}
+
+.input-group.valid input[type=text]{
+    border-color: #07a83f;
+}
+
+.modal.hide{
+    display:none;
 }

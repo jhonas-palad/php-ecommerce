@@ -9,8 +9,9 @@ spl_autoload_register(function ($classname) {
     foreach ($dirs as $dir) {
         $filename = $dir . str_replace('\\', '/', $classname) .'.php';
         #Check if the file is present
+        
         if (file_exists($filename)) {
-
+            
             require_once $filename;
             break;
         }

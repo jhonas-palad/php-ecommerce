@@ -10,39 +10,67 @@
 .nav__btns, .nav__links{
     gap:10px;
 }
-.link, .btn{
+
+
+li{
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    gap: 0.5em;
+    padding: 0.5em;
 
 }
+
+.link, .btn{
+
+    border-bottom:1.5px solid transparent;
+    transition: border-color 0.8s ;
+   
+}
+
+
+.link:hover, .btn:hover{
+    border-color:var(--svpurple1);
+}
+
+
+
 
 input[name=search]{
     padding:0.5rem 1rem;
     border-radius: 50px;
     border:none;
-    background-color:#aaaaaa;
+    background-color:#cccccc;
     color: #eeeeee;
     outline:none;
     transition: background-color 0.5s ease;
+
+
 }
 
 input[name=search]:focus{
     background-color: #ffffff;
-    border:1px solid  #333333;
+    border:1px solid  #afafaf;
     color:#333333;
 }
 
 label[for=search-input]{
     position:absolute;
-    right: 0;
+    right: 0.5em;
     width:20%;
     height: 100%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
-
+    cursor: pointer;
 }
-
+label svg{
+    height:1em;
+    width: 1em;
+}
 
 .scroll-down {
     transform: translate3d(0, -100%, 0);

@@ -1,0 +1,77 @@
+{%extends 'plain.html'%}
+
+{%block links%}
+<link rel="stylesheet" href="/php-ecommerce/static/main/css/main-style.css">
+<link rel="stylesheet" href="/php-ecommerce/static/main/css/icons-style.css">
+<link rel="stylesheet" href="/php-ecommerce/static/main/css/modal-style.css">
+<link rel="stylesheet" href="/php-ecommerce/static/admin/css/admin-modal-style.css">
+{%endblock%}
+
+{%block content%}
+    
+    {%include 'admin-modal-template.html'%}
+    
+    
+    <section class="container">
+        <div class="container__head">
+            <h1 class="head__title">Admin Panel</h1>
+            <button class="head__add-btn" onclick="view_modal()">New</button>
+        </div>
+
+        <div class="container__body">
+            <div class="body__table">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Color</th>
+                        <th>Series</th>
+                        <th>Images</th>
+                    </tr>
+                    {%if product_queryset%}
+                        {%for product in product_queryset%}
+                        <tr pk="{{product.product_id}}">
+                            <td>
+                                <div class="td__name-wrapper">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td__price-wrapper">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td__color-wrapper">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td__series-wrapper">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td__images-wrapper">
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    {%else%}
+                        <tr>
+                            <td colspan="7">No products</td>
+                        </tr>
+                    {%endif%}
+                </table>
+            </div>
+        </div>
+        
+        
+    </section>
+
+{%endblock%}
+
+{%block scripts%}
+<script src="/php-ecommerce/static/admin/js/admin-script.js"></script>
+{% endblock %}

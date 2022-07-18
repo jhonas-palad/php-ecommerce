@@ -3,8 +3,45 @@
 require_once '../config.php';
 #ini_set('display_errors',1); # uncomment if you need debugging
 
-$loader = new \Twig\Loader\FilesystemLoader(['templates', BASE_DIR . '/templates_main' ]);
-$twig = new \Twig\Environment($loader);
+use \models\{Product, Image};
+
+$prod_query = <<<EOD
+SELECT DISTINCT
+    product_name
+FROM 
+    product
+
+EOD;
+
+if(!$product_distinct = $mysqli->query($prod_query)){
+    die("Error occured!");
+}
+
+$product_d_set = $product_distinct->fetch_all();
+
+
+$product_names = [];
+foreach($product_d_set as $p){
+    array_push($product_names, $p[0]);
+}
+
+
+$products = [];
+foreach($product_names as $name){
+    $products[$name] = [];
+    foreach(Product::get($mysqli, 'product_name', $name) as $product_row){
+        $product_id = $product_row['product_id'];
+        $images = Image::get($mysqli, 'image_product_id', $product_id);
+        $product_row['images'] = $images;
+        array_push($products[$name],$product_row);
+    }
+}
+
+
+
+
+
+
 
 $context = [
     'title' => 'ByteMe',
@@ -40,57 +77,14 @@ $context = [
         ['static/main/img/nzxt-banner-2.svg',1],
         ['static/main/img/nzxt-banner-3.svg',2],
     ],
-    'products' => [
-        [
-            'name' => 'Starter Pro BLD Kit',
-            'src' => 'static/main/img/products/starter_pro_bld_kit.avif',
-            'price' => PESO_LOGO . '61,413',
-            'colors' => [
-                '#333333',
-                '#f0f1fa',
-            ]
-        ],
-        [
-            'name' => 'Starter Pro BLD Kit',
-            'src' => 'static/main/img/products/starter_pro_bld_kit.avif',
-            'price' => PESO_LOGO . '61,413',
-            'colors' => [
-                '#333333',
-                '#f0f1fa',
-            ]
-        ],
-        [
-            'name' => 'Starter Pro BLD Kit',
-            'src' => 'static/main/img/products/starter_pro_bld_kit.avif',
-            'price' => PESO_LOGO . '61,413',
-            'colors' => [
-                '#333333',
-                '#f0f1fa',
-            ]
-        ],
-        [
-            'name' => 'Starter Pro BLD Kit',
-            'src' => 'static/main/img/products/starter_pro_bld_kit.avif',
-            'price' => PESO_LOGO . '61,413',
-            'colors' => [
-                '#333333',
-                '#f0f1fa',
-            ]
-        ],
-        [
-            'name' => 'Starter Pro BLD Kit',
-            'src' => 'static/main/img/products/starter_pro_bld_kit.avif',
-            'price' => PESO_LOGO . '61,413',
-            'colors' => [
-                '#333333',
-                '#f0f1fa',
-            ]
-        ],
-    ]
+    'products' => $products,
+    'products_pre' => print_r($products,true),
+        
+    
 ];
 
 
-echo $twig->render('index.html', $context);
+echo $twig->render('index-template.html', $context);
 
 
 ?>

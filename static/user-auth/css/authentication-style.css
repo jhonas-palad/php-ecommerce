@@ -2,6 +2,9 @@
     height:100vh;
     
 }
+a{
+    color: var(--info-color);
+}
 
 .logo img{
     width:100px;
@@ -36,6 +39,18 @@ form[signup]{
     content: "";
 }
 
+
+.form__passwords{
+    align-self:stretch ;
+}
+
+.passwords__input-groups{
+    align-self: stretch;
+    justify-content:flex-start;
+    position:relative;
+}
+
+
 .input-group{
     position:relative;
     align-items: flex-start;
@@ -43,6 +58,14 @@ form[signup]{
     padding:5px;
     align-self: stretch;
     gap:0.5em;
+    justify-content:center;
+    flex-grow: 1;
+}
+
+.input-group.row{
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
 }
 
 .input-group input[type=text], .input-group input[type=password]{
@@ -84,10 +107,7 @@ form[signup]{
     color:#ffffff;
     border-radius: 8px;
     cursor:pointer;
-    transition: box-shadow 300ms ease, transform 200ms ease;
+    
 }
 
-.link-btn:hover{
-    box-shadow: var(--bxsd2);
-    transform:scale(1.02)
-}
+

@@ -1,0 +1,199 @@
+{% extends 'base.html'%}
+
+{%block title%}{{title}}{%endblock%}
+
+{%block links%}
+<link rel="stylesheet" href="static/main/css/home-content.css">
+{%endblock%}
+
+{%block content%}
+
+<section class="container flex-col">
+    <div class="container-item flex-col">
+        <div class="container__text flex-col">
+            <h2>Starter Series</h2>
+            <p class="lg1">Your PC Gaming Journey Starts Here</p>
+            <small>From ₱50000 PHP</small>
+            <a href="" class="link-btn">Shop Now</a>
+        </div>
+
+        <img class="container__img" src="static/main/img/top-home.webp" alt="" height="900" width="900">
+        
+    </div>
+
+</section>
+
+<section class="container flex-row">
+
+    <div class="container-item flex-col">
+        <img class="container__img" src="static/main/img/gaming-pc-nzxt.avif" alt="" height="600" width="600">
+
+        <div class="container__text" >
+            <h2 class="lg1">Gaming PCs Made Simple</h2>
+            <p class="md">Choose from curated parts and we'll build it for you.</p>
+            <a href="" class="link-btn">Find your build</a>
+        </div>
+        
+    </div>
+
+    <div class="container-item g-2x2">
+        {%for card in card_content %}
+
+        <a href="" class="container-item__card">
+            
+            <h1 class="card__title">{{card.card_title}}</h1>
+            <div class="card__content">
+                <div class="content__description flex-col">
+                    <p class="description__title">{{card.desc_title}}</p>
+                    <div class="description__bottom">{{card.desc_end}}</div>
+                </div>
+                <div class="container-item__side-bg"></div>
+            </div>
+            <!-- <img class="content__side-img" src="static/main/img/card-pc.avif" alt="" height="200" width="200"> -->
+            
+        </a>
+
+        {%endfor%}
+    </div>
+
+</section>
+
+
+<section class="container">
+    <span class="left-arrow"><i class="fa-solid fa-angle-left"></i></span>
+    <span class="right-arrow"><i class="fa-solid fa-angle-right"></i></span>
+    <div class="container__color-btns flex-row">
+        <i class="fa-solid fa-circle" color="purple"></i>
+        <i class="fa-solid fa-circle" color="light"></i>
+        <i class="fa-solid fa-circle" color="dark"></i>
+    </div>
+    
+    {%for img in img_banners%}
+    <img class="container__img" src="{{img.0}}" alt="" width="100%" index="{{img.1}}">
+    {%endfor%}
+
+</section>
+
+<section class="container flex-col">
+    <h1 class="lg1">Shop Our Favorites</h1>
+    <div class="container__card-products">
+        {%for product in products%}
+        <div class="card-products__card">
+            {%for entry in product%}
+                <a href="#" class="card-products__link">
+                    <button class="card__add-cart-btn">
+                        {%include 'solid-circle-add-svpurple1.svg'%}
+                    </button>
+                    <div class="card__img-bg">
+                        <img src="/php-ecommerce/uploads/products/162d5631d56216.svg" alt="">
+                    </div>
+                
+                    <div class="card__bottom flex-col">
+                        <h3>{{entry.product_name}}</h3>
+                        <div class="bottom__line"></div>
+                        <div class="bottom__end flex-row">
+                            <span class="md1">{{entry.product_price}}</span>
+                            <div class="end__colors">
+                                {%for color in product.colors%}
+                                <button class="color-change"> </button>
+                                {%endfor%}
+                            </div>
+                        
+                        </div>
+                    </div>
+                </a>  
+            {%endfor%}  
+        </div>
+            
+        {%endfor%}
+    </div>
+</section>
+    
+<section class="container">
+    <div class="container__head">
+        <h3>Starter Series</h3>
+        <p>Prebuilt PCs to Start any Gamin Journey</p>
+        <a>
+            <span>Learn More</span>
+             <i class="fa-solid fa-angle-right"></i>
+        </a>
+    </div>
+    <div class="container__body-img">
+        <img src="">
+    </div>
+</section>
+
+
+<pre>
+    {{products_pre}}
+</pre>
+
+{%endblock%}
+
+
+{%block scripts%}
+ 
+<script>
+    var section_3 = document.querySelector("section:nth-of-type(3)");
+    var banner_imgs = Array.from(section_3.querySelectorAll("img"));
+    var left_arrow = section_3.querySelector(".left-arrow");
+    var right_arrow = section_3.querySelector(".right-arrow");
+    
+    var color_btns = Array.from(section_3.querySelectorAll(".container__color-btns i"));
+
+    var current_show = 0;
+
+    var banner_imgs_len = banner_imgs.length;
+    banner_imgs[current_show].classList.add('show');
+
+    left_arrow.onclick = (e) =>{
+        
+        banner_imgs[current_show--].classList.remove('show');
+        //reset the index to last index
+        if(current_show < 0){
+            current_show = banner_imgs_len - 1;
+        }
+        banner_imgs[current_show].classList.add('show');
+    };
+
+    right_arrow.onclick = (e) =>{
+        banner_imgs[current_show++].classList.remove('show');
+        //reset the index to first index
+        if(current_show >= banner_imgs_len){
+            current_show = 0;
+        }
+        banner_imgs[current_show].classList.add('show');
+    };
+
+    color_btns.forEach( (btn) =>{
+        
+        btn.onclick = (e) =>{
+            let btn_color = btn.getAttribute('color');
+            let bg_color;
+            console.log(btn_color);
+            switch (btn_color){
+                case 'purple':
+                    bg_color = ' linear-gradient(90deg, rgba(193,168,240,1) 0%, rgba(172,93,255,1) 45%, rgba(112,9,168,1) 100%)';
+                    break;
+
+                case 'light':
+                    bg_color = 'radial-gradient(circle, rgba(161,163,172,1) 0%, rgba(255,255,255,1) 100%)'
+                    break;
+
+                case 'dark':
+                    bg_color = 'linear-gradient(90deg, rgba(170,170,170,1) 0%, rgba(129,129,129,1) 50%, rgba(94,94,94,1) 100%)'
+                    break;
+                default:
+                    bg_color = 'radial-gradient(circle, rgba(161,163,172,1) 0%, rgba(255,255,255,1) 100%)'
+                    break;
+
+            }
+
+            section_3.style.background= bg_color ;
+        }
+    });
+
+
+</script>
+
+{%endblock%}
