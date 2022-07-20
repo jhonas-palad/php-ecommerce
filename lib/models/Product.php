@@ -14,12 +14,16 @@ class Product extends ModelBase{
     }
     public static function add($conn, $args, $table_name="product"){
         $r_args = [
-            'product_name' => $args[0],
-            'product_series_id' => $args[1],
-            'product_price' => $args[2],
-            'product_stock' => $args[3],
-            'colorway_name' => $args[4],
+            'name' => $args[0],
+            'price' => $args[1],
+            'description' => $args[2],
+            'category_id' => $args[3],
         ];
         return parent::add($conn, $table_name, $r_args);
+    }
+    public static function filter($conn, $columns, $condition, $table_name="product"){
+        $columns = implode(', ', $columns);
+
+        return parent::filter($conn, $table_name, $columns, $condition);
     }
 }

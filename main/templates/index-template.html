@@ -17,7 +17,7 @@
             <a href="" class="link-btn">Shop Now</a>
         </div>
 
-        <img class="container__img" src="static/main/img/top-home.webp" alt="" height="900" width="900">
+        <img class="container__img" src="static/main/img/top-home.svg" alt="" height="900" width="900">
         
     </div>
 
@@ -77,71 +77,108 @@
 <section class="container flex-col">
     <h1 class="lg1">Shop Our Favorites</h1>
     <div class="container__card-products">
+    
         {%for product in products%}
-        <div class="card-products__card">
-            {%for entry in product%}
-                <a href="#" class="card-products__link">
-                    <button class="card__add-cart-btn">
-                        {%include 'solid-circle-add-svpurple1.svg'%}
-                    </button>
-                    <div class="card__img-bg">
-                        <img src="/php-ecommerce/uploads/products/162d5631d56216.svg" alt="">
+            <div  class="card-products__link {%if entry.colorway_name == 'black'%}hide{%endif%} {{entry.colorway_name}}">
+                <a href="" class="card__info">
+                    {%include 'solid-circle-info-svpurple1.svg'%}
+                </a>
+                <div class="card__img-bg">
+                    <img product_id="{{product.product_id}}" src="/php-ecommerce{{product.colors.white.gallery.0}}" alt="">
+                </div>
+            
+                <div class="card__bottom flex-col">
+                    <div class="bottom__label">
+                        <h3>{{product.name}}</h3>
+                        <small>{{product.description}}</small>
                     </div>
-                
-                    <div class="card__bottom flex-col">
-                        <h3>{{entry.product_name}}</h3>
-                        <div class="bottom__line"></div>
-                        <div class="bottom__end flex-row">
-                            <span class="md1">{{entry.product_price}}</span>
-                            <div class="end__colors">
-                                {%for color in product.colors%}
-                                <button class="color-change"> </button>
-                                {%endfor%}
-                            </div>
-                        
+                    
+                    <div class="bottom__line"></div>
+                    <div class="bottom__end flex-row">
+                        <span class="md1">{{peso}}{{product.price}}</span>
+                        <div class="end__colors flex-row">
+                            {%for color in product.colors%}
+                                <button class="color-change" style="background-color:{{color.hex}}" {{color.name}} onclick="switch_img({{product.product_id}},'/php-ecommerce{{color.gallery.0}}')"></button>
+                            {%endfor%}
                         </div>
                     </div>
-                </a>  
-            {%endfor%}  
-        </div>
-            
-        {%endfor%}
+                </div>
+            </div>  
+        {%endfor%}  
+        
     </div>
 </section>
     
 <section class="container">
-    <div class="container__head">
-        <h3>Starter Series</h3>
-        <p>Prebuilt PCs to Start any Gamin Journey</p>
-        <a>
-            <span>Learn More</span>
-             <i class="fa-solid fa-angle-right"></i>
-        </a>
+    <div class="container__card-wrapper">
+        <div class="card-wrapper__card ">
+            <div class="card__head flex-col">
+                <h3 class="md" >Starter Series</h3>
+                <p class="md1">Prebuilt PCs to Start any Gaming Journey</p>
+                <a>
+                    <span>Learn More</span>
+                     <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+            <div class="card__body-img">
+                <img src="static/main/img/nzxt-triple-pcs.svg" width="650" height="200" alt="">
+            </div>
+        </div>
+        <div class="card-wrapper__card">
+            <div class="card__head flex-col">
+                <h3 class="md">Creator Series</h3>
+                <p class="md1">Ultimate machine for performance, multitasking, and power.</p>
+                <a>
+                    <span>Learn More</span>
+                     <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+            <div class="card__body-img">
+                <img src="static/main/img/creator-triple-pcs.svg" width="650" height="200" alt="">
+            </div>
+        </div>
     </div>
-    <div class="container__body-img">
-        <img src="">
-    </div>
+    
+    
+</section>
+<section class="container flex-col">
+    <h1 class="g">GAMING IN OUR BLOOD</h1>
+    <h6 class="g">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+    <img src="/php-ecommerce/static/main/img/logos/nzxt-1-black.svg" alt="" height="100" width="100">
+    
 </section>
 
 
-<pre>
-    {{products_pre}}
-</pre>
+
 
 {%endblock%}
 
 
 {%block scripts%}
- 
-<script>
-    var section_3 = document.querySelector("section:nth-of-type(3)");
-    var banner_imgs = Array.from(section_3.querySelectorAll("img"));
-    var left_arrow = section_3.querySelector(".left-arrow");
-    var right_arrow = section_3.querySelector(".right-arrow");
-    
-    var color_btns = Array.from(section_3.querySelectorAll(".container__color-btns i"));
 
-    var current_show = 0;
+
+<script>
+    card_products = document.querySelector('.container__card-products');
+    
+    function switch_img(product_id, path){
+        let img = card_products.querySelector(`img[product_id='${product_id}']`);
+        img.setAttribute('src', path);
+    }
+    
+
+
+</script>
+    
+
+<script>
+    section_3 = document.querySelector("section:nth-of-type(3)");
+    banner_imgs = Array.from(section_3.querySelectorAll("img"));
+    left_arrow = section_3.querySelector(".left-arrow");
+    right_arrow = section_3.querySelector(".right-arrow");
+    
+    color_btns = Array.from(section_3.querySelectorAll(".container__color-btns i"));
+
+    current_show = 0;
 
     var banner_imgs_len = banner_imgs.length;
     banner_imgs[current_show].classList.add('show');

@@ -1,0 +1,70 @@
+.footer{
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(0deg, rgb(10, 10, 10) 0%, rgb(39, 39, 39) 70%, rgb(70, 70, 70) 100%);
+    justify-content:center;
+
+}
+
+.footer__wrapper{
+    position: relative;
+    min-width: 70%;
+    align-self: stretch;
+    padding:3em 0;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    
+    gap:4em;
+}
+.wrapper__head{
+    position:relative;
+    justify-content: space-between;
+}
+.head__socmed-logos{
+    gap:2em;
+}
+.head__socmed-logos i{
+    font-size: 3rem;
+    color: #696969;
+}
+.wrapper__body{
+    justify-content:space-between;
+    gap:1em;
+    align-self: stretch;
+    flex-grow:1;
+}
+.b-col{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap:0.5em;
+    
+    
+}
+.b-col ul li{
+    font-size: 1.3rem;
+    padding:0;
+
+}
+.b-col ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+.b-col ul li a, .b-col p{
+    color: #696969;
+    font-size: 1.5rem;
+}
+.b-col p{
+    font-weight: 600;
+    color: #ffff;
+}
+
+.wrapper__foot{
+    justify-content:space-between;
+}
+.foot__links{
+    gap:1em;
+}

@@ -27,4 +27,9 @@ class Image extends ModelBase{
 
         
     }
+    public static function filter($conn, $columns, $condition, $table_name="image"){
+        $columns = implode(', ', $columns);
+
+        return parent::filter($conn, $table_name, $columns, $condition);
+    }
 }

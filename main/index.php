@@ -3,43 +3,10 @@
 require_once '../config.php';
 #ini_set('display_errors',1); # uncomment if you need debugging
 
-use \models\{Product, Image};
-
-$prod_query = <<<EOD
-SELECT DISTINCT
-    product_name
-FROM 
-    product
-
-EOD;
-
-if(!$product_distinct = $mysqli->query($prod_query)){
-    die("Error occured!");
-}
-
-$product_d_set = $product_distinct->fetch_all();
+use \models\ProductVariant;
 
 
-$product_names = [];
-foreach($product_d_set as $p){
-    array_push($product_names, $p[0]);
-}
-
-
-$products = [];
-foreach($product_names as $name){
-    $products[$name] = [];
-    foreach(Product::get($mysqli, 'product_name', $name) as $product_row){
-        $product_id = $product_row['product_id'];
-        $images = Image::get($mysqli, 'image_product_id', $product_id);
-        $product_row['images'] = $images;
-        array_push($products[$name],$product_row);
-    }
-}
-
-
-
-
+$products = ProductVariant::all($mysqli, 12);
 
 
 
@@ -49,6 +16,7 @@ $context = [
         'apple_mac_m1' => 'static/main/img/m1-chip-macbook-air-pro.jpg',
         'byteme_labeled' => 'static/main/img/BYTEME-LABELED-COLORED.svg',
     ],
+    'peso' => PESO_SIGN,
     'card_content' =>[
 
         [
@@ -77,11 +45,25 @@ $context = [
         ['static/main/img/nzxt-banner-2.svg',1],
         ['static/main/img/nzxt-banner-3.svg',2],
     ],
+    'colors' =>[
+        [
+            'color_name' => 'white',
+            'color_hex' => '#F2F3F4'
+        ],
+        [
+            'color_name' => 'black',
+            'color_hex' => '#333333'
+        ],
+        
+    ],
     'products' => $products,
-    'products_pre' => print_r($products,true),
+    'products_pre' => print_r($products, true),
+    
         
     
 ];
+
+
 
 
 echo $twig->render('index-template.html', $context);

@@ -3,19 +3,20 @@
     require_once 'lib/utils/autoload.php';
     define('BASE_DIR',str_replace('\\','/',dirname(__FILE__)));
     define('STATIC_DIR', '/static/');
-    define('PESO_LOGO', '₱');
+    define('PESO_SIGN', '₱');
     define('UPLOAD_DIR', 'media/');
 
     $request_method = $_SERVER['REQUEST_METHOD']; 
 
-    $product_upload_dir = "/php-ecommerce/uploads/products";
+    $upload_url = "/php-ecommerce/uploads";
+    $target_upload_path = BASE_DIR . '/uploads';
     
     $debug = TRUE;
   
     $MYSQL_CREDENTIALS = array(
         'HOST' => '127.0.0.1',
         'PORT' => '3306',
-        'DB' => 'nzxt_ecommerce_db',
+        'DB' => 'nzxt_db',
         'USERNAME' => 'root',
         'PASSWORD' => '',
         'SOCKET' => '',

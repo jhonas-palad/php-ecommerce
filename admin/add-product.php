@@ -73,7 +73,8 @@
     
     foreach($file_container  as $file){
         $extension = $allowed_types[$file['filetype']];
-        $new_filepath = $product_upload_dir . "/" . $file['uniq_basename'] . '.' . $extension;
+        $img_upload_url = $upload_url . "/products/" . $file['uniq_basename'] . '.' . $extension;
+        $new_filepath = $target_upload_path . "/products/" . $file['uniq_basename'] . '.' . $extension;
         //Insert image path to database
         
         Image::add($mysqli, [
@@ -81,7 +82,7 @@
             $file['basename'],
             $file['filetype'],
             $file['filesize'],
-            $new_filepath,
+            $img_upload_url,
             $product_id
         ]);
         //Move to uploads folder

@@ -29,6 +29,7 @@ class ModelBase{
         
         return $result->fetch_all($mode = MYSQLI_ASSOC);
     }
+
     public static function add($conn, $table_name, $args){
         $keys =implode(", ",array_keys($args));
         $values = "'". implode("', '",array_values($args)) . "'";
@@ -44,5 +45,22 @@ class ModelBase{
         }
         echo 'Inserted!' . $keys .PHP_EOL . $values;
         return $conn->insert_id;
+    }
+    public static function filter($conn, $table_name, $columns, $condition){
+        $query = <<<EOD
+        SELECT 
+            $columns
+        FROM
+            $table_name
+        WHERE
+            $condition
+        
+        EOD;
+
+        if(!$result = $conn->query($query)){
+            die('Filtering results failed');
+        }
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
