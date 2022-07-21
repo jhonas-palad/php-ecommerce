@@ -43,7 +43,9 @@ form[signup]{
 .form__passwords{
     align-self:stretch ;
 }
-
+.form__passwords span{
+    font-size:1.3rem;
+}
 .passwords__input-groups{
     align-self: stretch;
     justify-content:flex-start;
@@ -68,7 +70,7 @@ form[signup]{
     align-items: center;
 }
 
-.input-group input[type=text], .input-group input[type=password]{
+/* .input-group input[type=text], .input-group input[type=password]{
     padding:0.8em;
     min-width: 100%;
     outline:none;
@@ -85,7 +87,7 @@ form[signup]{
 
 .input-group.valid input[type=text]{
     border-color: #07a83f;
-}
+} */
 
 
 .form__link-middle{

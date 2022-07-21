@@ -2,9 +2,11 @@
     require_once '../config.php';
     
 
+
+    print_r($_POST);
     $context = [
         'url' => $_SERVER['PHP_SELF'],
-        'url_sign_up' => '/php-ecommerce/user-auth/signup-view.php',
+        'url_sign_up' => '/php-ecommerce/user/signup-view.php',
 
     ];
 

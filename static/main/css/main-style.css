@@ -195,9 +195,21 @@ select{
     border-color: #03a9fc; 
 }
 
-.input-group.valid input[type=text]{
+.input-group span{
+    opacity:0;
+    font-size: 1.3rem;
+    transition: opacity 0.5s ease;
+    color:	#ff3333;
+}   
+
+.input-group.valid input{
     border-color: #07a83f;
 }
+
+.input-group.invalid input{
+    border-color: 	#ff3333
+}
+
 
 .modal.hide{
     display:none;

@@ -9,36 +9,40 @@
         </a>
         <div class="line"></div>
 
-        <div class="input-group valid">
-            <label for="username-id">Username</label>
-            <input id="username-id" name="username" type="text" placeholder="Enter your username">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Enter your username">
+            <span>Username is already taken</span>
         </div>
         <div class="input-group">
-            <label for="email-id">Email</label>
-            <input id="email-id" name="email" type="text" placeholder="Enter your email" >
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" placeholder="Enter your email" >
+            <span>Email is already taken</span>
         </div>
 
         <div class="form__passwords flex-col align-start">
             <div class="passwords__input-groups flex-row">
 
                 <div class="input-group">
-                    <label for="password-id">Password</label>
-                    <input id="password-id" name="password" type="password" placeholder="Password">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="text" placeholder="Password">
+                    <span>Password is invalid</span>
                 </div>
                 <div class="input-group">
-                    <label for="c-password-id">Confirm Password</label>
-                    <input id="c-password-id" name="c-password" type="password" placeholder="Confirm Password">
+                    <label for="c-password">Confirm Password</label>
+                    <input id="c-password" name="c-password" type="text" placeholder="Confirm Password">
+                    <span>Password is invalid</span>
                 </div>
                 
             </div>
-            <small>Use 8 or more characters with a mix of letters, numbers & symbols</small>
+            <span>Use 8 or more characters with a mix of letters, numbers & symbols</small>
 
         </div>
         
         
         <div class="input-group row">
-            <input id="agreement-id" name="agreement" type="checkbox">
-            <label for="agreement-id">
+            <input id="agreement" name="agreement" type="checkbox">
+            <label for="agreement">
                 I accept the NZXT's Terms of Use and have read the Privacy Policy
             </label>
         </div>
@@ -53,10 +57,9 @@
     </form>
 
 
-
 </div>
 {%endblock%}
 
 {%block scripts%}
-<script src="/php-ecommerce/static/user-auth/js/auth_validation.js"></script>
+<script src="/php-ecommerce/static/user/js/auth_validation.js"></script>
 {%endblock%}
